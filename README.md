@@ -1,30 +1,5 @@
 # RTC_Utils
 
-RTC_Uライブラリは，driver配下の各RTCチップのライブラリを個別にインストールした上で，チップに対応したクラスオブジェクトを生成した上で各APIを呼び出す型となるため，複数のRTCチップを使う可能性があるスケッチを作る場合は，RTCチップによる#ifdefが作成されてしまい，コードが読みにくくなるため，#ifdefの数を削減するためにこのライブラリを作成しました．
-
-利用するRTCがI2Cの場合は特に使い勝手が良くなります．
-
-## インストール
-このディレクトリごとArduinoのlibrariesフォルダにコピーしてください．
-
-## 使い方
-スケッチのはじめの方に以下のコードをコピーして，#define文のうちの一つ(実際に利用するRTC)を生かす．
-```
-//#define USE_RTC_4543
-//#define USE_RTC8564NB
-//#define USE_DS1307
-//#define USE_DS3231
-//#define USE_DS3234
-//#define USE_PCF8523
-//#define USE_RV8803
-//#define USE_RX8025
-//#define USE_RX8900
-
-#include "RTC_Utils.h"
-RTC_CLASS rtc = RTC_CLASS(&Wire);
-```
-以上で利用するRTCのオブジェクトがrtcという名前で利用できます．
-
 <!--- コメント
 
 ## 動作検証
